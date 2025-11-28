@@ -59,7 +59,6 @@ export default function SignupPage() {
         setIsLoading(true)
         setError(null)
         try {
-            // Removing confirmPassword before sending to API
             const { confirmPassword, ...payload } = values
             await mimir.post("/api/register/", payload)
             router.push("/login")
@@ -75,11 +74,13 @@ export default function SignupPage() {
     }
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
-            <Card className="w-full max-w-md">
+        <div className="flex min-h-screen items-center justify-center bg-[#F9F5F0] p-4">
+            <Card className="w-full max-w-md border-[#F2EAD3] bg-white shadow-lg">
                 <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-center">Sign Up</CardTitle>
-                    <CardDescription className="text-center">
+                    <CardTitle className="text-2xl font-bold text-center text-[#344F1F]">
+                        Join Munch
+                    </CardTitle>
+                    <CardDescription className="text-center text-gray-600">
                         Create an account to get started
                     </CardDescription>
                 </CardHeader>
@@ -91,9 +92,13 @@ export default function SignupPage() {
                                 name="username"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Username</FormLabel>
+                                        <FormLabel className="text-[#344F1F]">Username</FormLabel>
                                         <FormControl>
-                                            <Input placeholder="Choose a username" {...field} />
+                                            <Input
+                                                placeholder="Choose a username"
+                                                className="border-[#F2EAD3] focus:ring-[#F4991A] focus:border-[#F4991A]"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -104,9 +109,14 @@ export default function SignupPage() {
                                 name="email"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Email</FormLabel>
+                                        <FormLabel className="text-[#344F1F]">Email</FormLabel>
                                         <FormControl>
-                                            <Input type="email" placeholder="Enter your email" {...field} />
+                                            <Input
+                                                type="email"
+                                                placeholder="Enter your email"
+                                                className="border-[#F2EAD3] focus:ring-[#F4991A] focus:border-[#F4991A]"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -117,9 +127,14 @@ export default function SignupPage() {
                                 name="password"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Password</FormLabel>
+                                        <FormLabel className="text-[#344F1F]">Password</FormLabel>
                                         <FormControl>
-                                            <Input type="password" placeholder="Create a password" {...field} />
+                                            <Input
+                                                type="password"
+                                                placeholder="Create a password"
+                                                className="border-[#F2EAD3] focus:ring-[#F4991A] focus:border-[#F4991A]"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -130,11 +145,12 @@ export default function SignupPage() {
                                 name="confirmPassword"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Confirm Password</FormLabel>
+                                        <FormLabel className="text-[#344F1F]">Confirm Password</FormLabel>
                                         <FormControl>
                                             <Input
                                                 type="password"
                                                 placeholder="Confirm your password"
+                                                className="border-[#F2EAD3] focus:ring-[#F4991A] focus:border-[#F4991A]"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -143,11 +159,15 @@ export default function SignupPage() {
                                 )}
                             />
                             {error && (
-                                <div className="text-sm text-red-500 font-medium text-center">
+                                <div className="text-sm text-[#F4991A] font-medium text-center bg-[#F2EAD3] p-3 rounded-lg">
                                     {error}
                                 </div>
                             )}
-                            <Button type="submit" className="w-full" disabled={isLoading}>
+                            <Button
+                                type="submit"
+                                className="w-full bg-[#F4991A] hover:bg-[#344F1F] text-white font-medium transition-colors"
+                                disabled={isLoading}
+                            >
                                 {isLoading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -163,7 +183,7 @@ export default function SignupPage() {
                 <CardFooter className="flex justify-center">
                     <p className="text-sm text-gray-500">
                         Already have an account?{" "}
-                        <Link href="/login" className="text-blue-600 hover:underline">
+                        <Link href="/login" className="text-[#F4991A] hover:text-[#344F1F] font-medium hover:underline">
                             Login
                         </Link>
                     </p>

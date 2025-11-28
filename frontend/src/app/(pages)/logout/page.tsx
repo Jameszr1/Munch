@@ -10,7 +10,7 @@ export default function LogoutPage() {
     useEffect(() => {
         localStorage.removeItem(ACCESS_TOKEN)
         localStorage.removeItem(REFRESH_TOKEN)
-        router.push("/login")
+        router.push("/")
     }, [router])
 
     return (
