@@ -7,6 +7,7 @@ from .models import *
 
 # Create your views here.
 
+
 class UserView(generics.ListCreateAPIView):
     """
     View to List and create users.
@@ -18,6 +19,7 @@ class UserView(generics.ListCreateAPIView):
     Permissions:
     - AllowAny: Any user (authenticated or not) can access this view.
     """
+
     permission_classes = [AllowAny]
     queryset = User.objects.all()
     serializer_class = UserSerializer

@@ -20,6 +20,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api-auth/", include("rest_framework.urls")), # links to rest framework auth views
-    path("api/", include("api.urls")), # links to backend/api/urls.py
+    path(
+        "api-auth/", include("rest_framework.urls")
+    ),  # links to rest framework auth views
+    path("api/", include("api.urls")),  # links to backend/api/urls.py
 ]

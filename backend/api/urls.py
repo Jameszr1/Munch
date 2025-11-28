@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="get_token"),
     path("token/refresh/", TokenRefreshView.as_view(), name="refresh"),
-    path('users/', views.UserView.as_view(), name='user-list-create'),
+    path("users/", views.UserView.as_view(), name="user-list-create"),
 ]
