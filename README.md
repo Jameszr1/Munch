@@ -1,4 +1,4 @@
-# Munch
+# Munch (Mono-Repo)
 University Food Review App - Not For Profit and OSS
 
 
@@ -7,15 +7,15 @@ University Food Review App - Not For Profit and OSS
 ## Stack
 ### - Frontend:
   - React Native or Native? (Swift + Kotlin)
-  - Zustand state management
-  -   
+  - Zustand state management (for main website)
+ 
 ### - Backend (API Only):
   - Django
   - MINIO (s3 compatible storage)
   - Postgres (relational storage)
-  - Advertisement algo
+  - Advertisement algo generator
 
-## Key Functionality (user flow diagram)
+## Key Functionality 
 #### From User Perspective 
 user opens app / website -> look at reviews -> wanting to post or order? user login -> join up onto app
 -> user can order through app and get through ceebs???
