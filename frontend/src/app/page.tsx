@@ -28,11 +28,13 @@ import { DishCard } from "./components/dish-card"
 export default function HomePage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [username, setUsername] = useState<string | null>(null)
+  const [mounted, setMounted] = useState(false)
   const scrollContainerRefs = useRef<{ [key: string]: HTMLDivElement | null }>(
     {}
   )
 
   useEffect(() => {
+    setMounted(true)
     const token = localStorage.getItem(ACCESS_TOKEN)
     setIsLoggedIn(!!token)
     if (token) {
@@ -84,7 +86,7 @@ export default function HomePage() {
               <Globe size={18} className="text-[#344F1F]" />
             </div>
 
-            {isLoggedIn ? (
+            {mounted && isLoggedIn ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <div className="flex items-center gap-3 rounded-full border border-[#F2EAD3] p-1 pl-3 hover:shadow-md transition duration-200 cursor-pointer bg-white">
