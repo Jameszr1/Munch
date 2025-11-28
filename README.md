@@ -4,6 +4,34 @@ University Food Review App - Not For Profit and OSS
 name: Monash + Lunch  (get it)
 
 
+## Backend getting started
+1. create db munch in postgres
+
+2. go into backend folder
+```bash
+cd backend
+```
+
+3. this project uses uv as the package manager
+```
+uv sync
+
+# MACOS + Linux:
+source .venv/bin/activate
+
+# Windows
+.venv/scripts/activate.bat
+```
+
+4. Migrate database
+```bash
+uv run manage.py makemigrations && uv run manage.py migrate
+```
+
+5. start backend
+```
+uv run manage.py runserver
+```
 
 
 ## Stack
