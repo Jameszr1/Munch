@@ -3,6 +3,24 @@ University Food Review App - Not For Profit and OSS
 
 name: Monash + Lunch  (get it)
 
+## Frontend getting started
+1. go into the frontend folder
+
+```bash
+cd frontend/
+```
+
+2. install packages using your preferred node package manager.
+
+```bash
+npm i
+```
+
+3. run the UI
+
+```bash
+npm run dev
+```
 
 ## Backend getting started
 1. create db munch in postgres
